@@ -36,6 +36,20 @@ Body text in **markdown**...
 - Templates live in `layouts/`, styles in `assets/css/style.css`.
 - Static files (JS, images) go in `static/` and are copied as-is.
 
+## Images in posts
+
+Create a *page bundle*: a folder under `content/posts/` containing
+`index.md` and the image files next to it, e.g.
+`content/posts/my-post/cover.jpg`. Then embed with:
+
+```text
+{{</* figure src="cover.jpg" alt="Description" caption="Optional caption" */>}}
+```
+
+Images are resized into responsive variants automatically. Dark mode
+follows the OS setting (`prefers-color-scheme`), and code blocks are
+highlighted with Hugo's built-in Chroma.
+
 ## Deploy (GitHub Pages)
 
 1. In the repo settings: **Settings > Pages > Build and deployment > Source**

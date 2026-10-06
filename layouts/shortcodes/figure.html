@@ -1,0 +1,21 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $page := .Page }}
+{{ $file := $page.Resources.GetMatch $src }}
+<figure class="post-figure">
+{{ if $file }}
+  {{ $small := $file.Resize "800x" }}
+  {{ $large := $file.Resize "1200x" }}
+  <img
+    src="{{ $small.RelPermalink }}"
+    srcset="{{ $small.RelPermalink }} 800w, {{ $large.RelPermalink }} 1200w"
+    sizes="(min-width: 48rem) 44rem, 100vw"
+    alt="{{ $alt }}" loading="lazy" decoding="async" width="{{ $small.Width }}" height="{{ $small.Height }}">
+{{ else }}
+  <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy">
+{{ end }}
+{{ with $caption }}
+  <figcaption>{{ . }}</figcaption>
+{{ end }}
+</figure>

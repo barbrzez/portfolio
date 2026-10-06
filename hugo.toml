@@ -2,6 +2,10 @@ baseURL = "https://barbrzez.github.io/portfolio/"
 languageCode = "en"
 title = "Barbrzez"
 
+[markup.highlight]
+  noClasses = false
+  lineNos = false
+
 [params]
   author = "barbrzez"
   tagline = "Personal blog, portfolio & CV"
