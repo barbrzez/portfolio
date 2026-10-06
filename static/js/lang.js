@@ -1,12 +1,11 @@
-// Language toggle: hides posts marked with lang="pl" on the blog index.
-// Preference is remembered in localStorage.
+// Language filter: hides posts marked with lang="pl" across the site.
+// The toggle button lives on the blog index; the preference is remembered
+// in localStorage and applied on every page load.
 
 (function () {
   var KEY = "hide_pl";
-  var toggle = document.getElementById("lang-toggle");
-  if (!toggle) return;
 
-  function hidden() {
+  function stored() {
     try {
       return localStorage.getItem(KEY) === "1";
     } catch (e) {
@@ -14,17 +13,24 @@
     }
   }
 
+  var toggle = document.getElementById("lang-toggle");
+
   function setHidden(value) {
     document.body.classList.toggle("hide-pl", value);
-    toggle.setAttribute("aria-pressed", value ? "true" : "false");
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", value ? "true" : "false");
+      toggle.textContent = value ? "Show Polish posts" : "Hide Polish posts";
+    }
     try {
       localStorage.setItem(KEY, value ? "1" : "0");
     } catch (e) {}
   }
 
-  if (hidden()) setHidden(true);
+  setHidden(stored());
 
-  toggle.addEventListener("click", function () {
-    setHidden(!document.body.classList.contains("hide-pl"));
-  });
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      setHidden(!document.body.classList.contains("hide-pl"));
+    });
+  }
 })();
