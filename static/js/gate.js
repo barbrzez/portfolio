@@ -28,8 +28,7 @@
   }
 
   function sha256(text) {
-    // Only modern browsers are needed; crypto.subtle requires HTTPS or
-    // localhost -- GitHub Pages is HTTPS, so this is fine.
+    // GitHub Pages is HTTPS, so crypto.subtle is available.
     return crypto.subtle
       .digest("SHA-256", new TextEncoder().encode(text))
       .then(function (buf) {

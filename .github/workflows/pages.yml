@@ -19,12 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
         with:
-          python-version: "3.12"
-          cache: pip
-      - run: pip install -r requirements.txt
-      - run: python3 sitegen.py --clean
+          hugo-version: "0.139.4"
+          extended: false
+      - run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

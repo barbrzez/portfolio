@@ -1,0 +1,11 @@
+<p class="meta">
+{{ with .Date }}<time>{{ .Format "2006-01-02" }}</time>{{ end }}
+</p>
+{{ with .Params.tags }}
+<p class="tags">
+{{ range . }}
+{{ $tag := . }}
+<a class="tag" href="{{ $tag | printf "tags/%s/" | relURL }}">#{{ $tag }}</a>
+{{ end }}
+</p>
+{{ end }}

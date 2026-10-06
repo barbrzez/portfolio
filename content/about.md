@@ -1,7 +1,7 @@
----
-title: About Me & CV
-description: Lorem ipsum CV placeholder - replace with your real experience.
----
++++
+title = 'About Me & CV'
+description = 'Lorem ipsum CV placeholder - replace with your real experience.'
++++
 
 ## Summary
 

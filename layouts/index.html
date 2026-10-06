@@ -1,0 +1,8 @@
+{{ define "main" }}
+<h1>Blog</h1>
+{{ range where .Site.RegularPages "Type" "posts" }}
+{{ partial "card.html" . }}
+{{ else }}
+<p>No posts yet.</p>
+{{ end }}
+{{ end }}

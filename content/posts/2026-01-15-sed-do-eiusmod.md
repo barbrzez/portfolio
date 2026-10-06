@@ -1,9 +1,9 @@
----
-title: Sed Do Eiusmod Tempor
-date: 2026-01-15
-tags: [tempor, incididunt]
-description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
----
++++
+title = 'Sed Do Eiusmod Tempor'
+date = 2026-01-15
+tags = ['tempor', 'incididunt']
+description = 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
++++
 
 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 enim ad minim veniam, quis nostrud exercitation ullamco laboris.

@@ -1,37 +1,37 @@
 # Personal Blog / Portfolio / CV
 
-A minimal static site. Markdown files in `content/` are compiled to
-static HTML and CSS by [`sitegen.py`](sitegen.py) (Python, `markdown` +
-`PyYAML`). Deployed to GitHub Pages with a client-side password gate.
+A minimal static site built with [Hugo](https://gohugo.io). Markdown
+files in `content/` are compiled to static HTML and CSS. Deployed to
+GitHub Pages with a client-side password gate.
 
 ## Quick start
 
 ```bash
-pip install -r requirements.txt
-python3 sitegen.py --clean
-python3 -m http.server -d public 8000   # preview at http://localhost:8000
+# install Hugo (https://gohugo.io/installation/), then:
+hugo server              # preview at http://localhost:1313
+hugo                     # build static site to public/
 ```
 
 ## Writing content
 
-Posts go in `content/posts/`, the About/CV page in `content/pages/about.md`.
-Use YAML front matter:
+Posts go in `content/posts/`, the About/CV page is `content/about.md`.
+Use TOML front matter:
 
 ```markdown
----
-title: My Post
-date: 2026-02-01
-tags: [python, web]
-description: Short summary shown on the blog index.
----
++++
+title = 'My Post'
+date = 2026-02-01
+tags = ['python', 'web']
+description = 'Short summary shown on the blog index.'
++++
 
 Body text in **markdown**...
 ```
 
 - `tags` powers the tag pages under `/tags/`.
-- Each post gets its own page at `/posts/<slug>/`.
-- Static assets (CSS, JS, images) live in `static/` and are copied as-is.
-- Site title/author are configured in the `SITE` dict in `sitegen.py`.
+- Site title/author are configured in `hugo.toml`.
+- Templates live in `layouts/`, styles in `assets/css/style.css`.
+- Static files (JS, images) go in `static/` and are copied as-is.
 
 ## Deploy (GitHub Pages)
 
@@ -57,5 +57,5 @@ To change the password:
 echo -n "yourpassword" | sha256sum
 ```
 
-Put the resulting hex hash into `HASH` in `static/gate.js` (the default
+Put the resulting hex hash into `HASH` in `static/js/gate.js` (the default
 password is `changeme`).

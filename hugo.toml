@@ -1,0 +1,7 @@
+baseURL = "https://barbrzez.github.io/portfolio/"
+languageCode = "en"
+title = "Barbrzez"
+
+[params]
+  author = "barbrzez"
+  tagline = "Personal blog, portfolio & CV"

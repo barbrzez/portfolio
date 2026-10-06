@@ -1,9 +1,9 @@
----
-title: Lorem Ipsum Dolor Sit Amet
-date: 2026-01-05
-tags: [lorem, ipsum]
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
----
++++
+title = 'Lorem Ipsum Dolor Sit Amet'
+date = 2026-01-05
+tags = ['lorem', 'ipsum']
+description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
++++
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -23,4 +23,4 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 > Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
 > ut aliquip ex ea commodo consequat.
 
-For more detail see the [second article](../2026-01-10-quis-nostrud/index.html).
+For more detail see the [second article]({{< relref "2026-01-10-quis-nostrud" >}}).

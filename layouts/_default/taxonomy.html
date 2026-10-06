@@ -1,0 +1,7 @@
+{{ define "main" }}
+<h1>Posts tagged &quot;{{ .Data.Term }}&quot;</h1>
+<p class="backlink"><a href="{{ "tags/" | relURL }}">&larr; All tags</a></p>
+{{ range .Pages }}
+{{ partial "card.html" . }}
+{{ end }}
+{{ end }}
