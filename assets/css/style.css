@@ -92,6 +92,45 @@ h3 {
   color: #1f1b16;
 }
 
+/* Language toggle */
+.lang-toggle-row {
+  margin: 0 0 0.75rem;
+  text-align: right;
+}
+
+#lang-toggle {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  border: 1px solid #c9bda2;
+  border-radius: 999px;
+  background: #f3eee2;
+  color: #4c443a;
+  cursor: pointer;
+}
+
+#lang-toggle[aria-pressed="true"] {
+  background: #2b2620;
+  color: #faf7f0;
+  border-color: #2b2620;
+}
+
+body.hide-pl [data-lang="pl"] {
+  display: none;
+}
+
+.lang-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+  padding: 0.05rem 0.45rem;
+  background: #e7f0e4;
+  border: 1px solid #cfdcc9;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #3f5a38;
+}
+
 /* Post cards */
 .card {
   padding: 1.4rem 0;

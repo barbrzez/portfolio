@@ -1,8 +1,12 @@
 {{ define "main" }}
+<div class="lang-toggle-row">
+<button id="lang-toggle" type="button" aria-pressed="false">Hide Polish posts</button>
+</div>
 <h1>Blog</h1>
 {{ range where .Site.RegularPages "Type" "posts" }}
 {{ partial "card.html" . }}
 {{ else }}
 <p>No posts yet.</p>
 {{ end }}
+<script src="{{ "js/lang.js" | relURL }}"></script>
 {{ end }}

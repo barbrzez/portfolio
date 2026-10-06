@@ -29,6 +29,9 @@ Body text in **markdown**...
 ```
 
 - `tags` powers the tag pages under `/tags/`.
+- To publish in Polish, add `lang = 'pl'` to the front matter. The blog
+  index has a toggle to hide Polish posts (remembered per browser).
+  English posts need no extra field.
 - Site title/author are configured in `hugo.toml`.
 - Templates live in `layouts/`, styles in `assets/css/style.css`.
 - Static files (JS, images) go in `static/` and are copied as-is.

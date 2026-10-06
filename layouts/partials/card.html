@@ -1,5 +1,5 @@
-<article class="card">
-<h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+<article class="card{{ with .Params.lang }} card-{{ . }}{{ end }}"{{ with .Params.lang }} data-lang="{{ . }}"{{ end }}>
+<h2><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.lang }} <span class="lang-badge">{{ . }}</span>{{ end }}</h2>
 {{ partial "meta.html" . }}
 {{ with .Description }}
 <p class="excerpt">{{ . }}</p>
