@@ -8,6 +8,7 @@
 {{ $style := resources.Get "css/style.css" | minify }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 <script src="{{ "js/gate.js" | relURL }}"></script>
+<script src="{{ "js/theme.js" | relURL }}" defer></script>
 </head>
 <body>
 {{ partial "header.html" . }}
